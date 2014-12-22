@@ -27,5 +27,5 @@ Command | Description
 hubot dpaste `content` | Creates a new paste with `content` on [Dpaste.com][dpaste]
 hubot pastebin `content` | Creates a new paste with `content` on [Pastebin.com][pastebin]
 
-  [dpaste]: //dpaste.com/
+  [dpaste]: http://dpaste.com/
   [pastebin]: //pastebin.com/

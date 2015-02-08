@@ -5,7 +5,7 @@ A Hubot script for creating a new paste on several online services: [Dpaste.com]
 
 ## Installation via NPM
 
-1. Install the __hubot-paste__ module as a Hubot dependency by adding it to your `package.json` file:
+1. Install the __hubot-paste__ module as a Hubot dependency by running:
 
     ```
     npm install --save hubot-paste
@@ -14,10 +14,19 @@ A Hubot script for creating a new paste on several online services: [Dpaste.com]
 2. Enable the script by adding the __hubot-paste__ entry to your `external-scripts.json` file:
 
     ```json
-    ["hubot-paste"]
+    [
+        "hubot-paste"
+    ]
     ```
 
 3. Run `npm install`
+
+
+## Config
+
+Config | Description
+--- | ---
+`PASTEBIN_API_KEY` | A unique developer [API key](http://pastebin.com/api) is required to use Pastebin's API
 
 
 ## Commands

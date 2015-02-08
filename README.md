@@ -22,11 +22,11 @@ A Hubot script for creating a new paste on several online services: [Dpaste.com]
 3. Run `npm install`
 
 
-## Config
+## Configuration
 
-Config | Description
---- | ---
-`PASTEBIN_API_KEY` | A unique developer [API key](http://pastebin.com/api) is required to use Pastebin's API
+Variable | Default | Description
+--- | --- | ---
+`PASTEBIN_API_KEY` | N/A | A unique developer [API key](http://pastebin.com/api) is required to use Pastebin's API
 
 
 ## Commands

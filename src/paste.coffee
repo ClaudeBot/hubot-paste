@@ -57,12 +57,12 @@ class PasteBot
 
     registerListeners: ->
         @robot.respond /dpaste (.+)/i, (msg) =>
-            @dpaste msg.match[1], 1, ->
+            @dpaste msg.match[1], 1, (link) ->
                 msg.reply link
 
         if PASTEBIN_API_KEY?
             @robot.respond /pastebin (.+)/i, (msg) =>
-                @pastebin msg.match[1], "1D", ->
+                @pastebin msg.match[1], "1D", (link) ->
                     msg.reply link
         else
             @robot.logger.warning "Missing PASTEBIN_API_KEY in environment. Pastebin services will not be available."

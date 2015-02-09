@@ -19,7 +19,7 @@ A Hubot script for creating a new paste on several online services: [Dpaste.com]
     ]
     ```
 
-3. Run `npm install`
+3. Run your bot and see below for available config / commands
 
 
 ## Configuration

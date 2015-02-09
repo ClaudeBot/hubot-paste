@@ -1,5 +1,7 @@
 # Hubot: Paste
 
+[![Build Status](https://travis-ci.org/ClaudeBot/hubot-paste.svg)](https://travis-ci.org/ClaudeBot/hubot-paste)
+
 A Hubot script for creating a new paste on several online services: [Dpaste.com][dpaste] and [Pastebin.com][pastebin].
 
 

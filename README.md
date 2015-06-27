@@ -4,6 +4,8 @@
 
 A Hubot script for creating a new paste on several online services: [Dpaste.com][dpaste] and [Pastebin.com][pastebin].
 
+See [`src/paste.coffee`](src/paste.coffee) for full documentation.
+
 
 ## Installation via NPM
 
@@ -13,7 +15,7 @@ A Hubot script for creating a new paste on several online services: [Dpaste.com]
     npm install --save hubot-paste
     ```
 
-2. Enable the script by adding the __hubot-paste__ entry to your `external-scripts.json` file:
+2. Enable the module by adding the __hubot-paste__ entry to your `external-scripts.json` file:
 
     ```json
     [

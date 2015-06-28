@@ -1,6 +1,7 @@
-# Hubot: Paste
+# hubot-paste
 
 [![Build Status](https://travis-ci.org/ClaudeBot/hubot-paste.svg)](https://travis-ci.org/ClaudeBot/hubot-paste)
+[![devDependency Status](https://david-dm.org/ClaudeBot/hubot-paste/dev-status.svg)](https://david-dm.org/ClaudeBot/hubot-paste#info=devDependencies)
 
 A Hubot script for creating a new paste on several online services: [Dpaste.com][dpaste] and [Pastebin.com][pastebin].
 
@@ -39,6 +40,15 @@ Command | Description
 --- | ---
 hubot dpaste `content` | Creates a new paste with `content` on [Dpaste.com][dpaste]
 hubot pastebin `content` | Creates a new paste with `content` on [Pastebin.com][pastebin]
+
+
+## Sample Interaction
+
+```
+user1>> hubot pastebin Hello World!
+hubot>> user1: http://pastebin.com/9jrTi80f
+```
+
 
   [dpaste]: http://dpaste.com/
   [pastebin]: //pastebin.com/

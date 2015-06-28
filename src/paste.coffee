@@ -25,7 +25,7 @@ class IPaste
     create: (err, link, callback) ->
         if err
             link = DEF_SERVER_ERROR
-            return @robot.logger.error err
+            return @robot.logger.error "hubot-paste: #{err}"
         callback link
 
 class Dpaste extends IPaste
@@ -35,9 +35,9 @@ class Dpaste extends IPaste
 
         @robot.http(DPASTE_API_URL)
             .header("content-type", "application/x-www-form-urlencoded")
-            .post(data) (err, res, body) =>
-                @robot.logger.debug res.headers
-                super err, res.headers.location, callback
+            .post(data) (err, httpRes, body) =>
+                @robot.logger.debug "hubot-paste: #{httpRes.headers}"
+                super err, httpRes.headers.location, callback
 
 class Pastebin extends IPaste
     create: (text, expire = "1D", callback = false) ->
@@ -47,8 +47,8 @@ class Pastebin extends IPaste
 
         @robot.http(PASTEBIN_API_URL)
             .header("content-type", "application/x-www-form-urlencoded")
-            .post(data) (err, res, body) =>
-                @robot.logger.debug res.headers
+            .post(data) (err, httpRes, body) =>
+                @robot.logger.debug "hubot-paste: #{httpRes.headers}"
                 super err, body, callback
 
 class PasteBot
@@ -56,16 +56,16 @@ class PasteBot
         @registerListeners()
 
     registerListeners: ->
-        @robot.respond /dpaste (.+)/i, (msg) =>
-            @dpaste msg.match[1], 1, (link) ->
-                msg.reply link
+        @robot.respond /dpaste (.+)/i, (res) =>
+            @dpaste res.match[1], 1, (link) ->
+                res.reply link
 
         if PASTEBIN_API_KEY?
-            @robot.respond /pastebin (.+)/i, (msg) =>
-                @pastebin msg.match[1], "1D", (link) ->
-                    msg.reply link
+            @robot.respond /pastebin (.+)/i, (res) =>
+                @pastebin res.match[1], "1D", (link) ->
+                    res.reply link
         else
-            @robot.logger.warning "Missing PASTEBIN_API_KEY in environment. Pastebin services will not be available."
+            @robot.logger.warning "hubot-paste: Missing PASTEBIN_API_KEY in environment. Pastebin services will not be available."
 
     dpaste: (text, expire = "1", callback) ->
         service = new Dpaste @robot

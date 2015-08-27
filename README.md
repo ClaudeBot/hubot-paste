@@ -36,10 +36,10 @@ Variable | Default | Description
 
 ## Commands
 
-Command | Description
+Command | Listener ID | Description
 --- | ---
-hubot dpaste `content` | Creates a new paste with `content` on [Dpaste.com][dpaste]
-hubot pastebin `content` | Creates a new paste with `content` on [Pastebin.com][pastebin]
+hubot dpaste `content` | `paste.dpaste.new` | Creates a new paste with `content` on [Dpaste.com][dpaste]
+hubot pastebin `content` | `paste.pastebin.new` | Creates a new paste with `content` on [Pastebin.com][pastebin]
 
 
 ## Sample Interaction

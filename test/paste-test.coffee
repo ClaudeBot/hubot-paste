@@ -12,6 +12,6 @@ describe "paste", ->
         require("../src/paste")(@robot)
 
     it "registers a respond listener", ->
-        expect(@robot.respond).to.have.been.calledWith(/dpaste (.+)/i)
+        expect(@robot.respond).to.have.been.calledWith(/dpaste ([\s\S]+)/i)
         if process.env.PASTEBIN_API_KEY?
-            expect(@robot.respond).to.have.been.calledWith(/pastebin (.+)/i)
+            expect(@robot.respond).to.have.been.calledWith(/pastebin ([\s\S]+)/i)

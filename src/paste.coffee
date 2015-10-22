@@ -56,12 +56,12 @@ class PasteBot
         @registerListeners()
 
     registerListeners: ->
-        @robot.respond /dpaste (.+)/i, id: "paste.dpaste.new", (res) =>
+        @robot.respond /dpaste ([\s\S]+)/i, id: "paste.dpaste.new", (res) =>
             @dpaste res.match[1], 1, (link) ->
                 res.reply link
 
         if PASTEBIN_API_KEY?
-            @robot.respond /pastebin (.+)/i, id: "paste.pastebin.new", (res) =>
+            @robot.respond /pastebin ([\s\S]+)/i, id: "paste.pastebin.new", (res) =>
                 @pastebin res.match[1], "1D", (link) ->
                     res.reply link
         else

@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/ClaudeBot/hubot-paste.svg)](https://travis-ci.org/ClaudeBot/hubot-paste)
 [![devDependency Status](https://david-dm.org/ClaudeBot/hubot-paste/dev-status.svg)](https://david-dm.org/ClaudeBot/hubot-paste#info=devDependencies)
 
-A Hubot script for creating a new paste on several online services: [Dpaste.com][dpaste] and [Pastebin.com][pastebin].
+A Hubot script for creating a new paste on several online services: [Dpaste.com][dpaste], [Sprunge.us][sprunge], and [Pastebin.com][pastebin].
 
 See [`src/paste.coffee`](src/paste.coffee) for full documentation.
 
@@ -39,6 +39,7 @@ Variable | Default | Description
 Command | Listener ID | Description
 --- | --- | ---
 hubot dpaste `content` | `paste.dpaste.new` | Creates a new paste with `content` on [Dpaste.com][dpaste]
+hubot sprunge `content` | `paste.sprunge.new` | Creates a new paste with `content` on [Sprunge.us][sprunge]
 hubot pastebin `content` | `paste.pastebin.new` | Creates a new paste with `content` on [Pastebin.com][pastebin]
 
 
@@ -51,4 +52,5 @@ hubot>> user1: http://pastebin.com/9jrTi80f
 
 
   [dpaste]: http://dpaste.com/
+  [sprunge]: http://sprunge.us/
   [pastebin]: //pastebin.com/

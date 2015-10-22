@@ -13,5 +13,7 @@ describe "paste", ->
 
     it "registers a respond listener", ->
         expect(@robot.respond).to.have.been.calledWith(/dpaste ([\s\S]+)/i)
+        expect(@robot.respond).to.have.been.calledWith(/sprunge ([\s\S]+)/i)
+
         if process.env.PASTEBIN_API_KEY?
             expect(@robot.respond).to.have.been.calledWith(/pastebin ([\s\S]+)/i)

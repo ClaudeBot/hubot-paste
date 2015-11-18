@@ -65,8 +65,8 @@ class Pastebin extends IPaste
                 super err, body, callback
 
 class PasteBot
-    constructor: (@robot) ->
-        @registerListeners()
+    constructor: (@robot, listener) ->
+        @registerListeners() if listener
 
     registerListeners: ->
         @robot.respond /dpaste ([\s\S]+)/i, id: "paste.dpaste.new", (res) =>
@@ -96,5 +96,5 @@ class PasteBot
         service = new Pastebin @robot
         service.create text, expire, callback
 
-module.exports = (robot) ->
-    new PasteBot robot
+module.exports = (robot, listener = true) ->
+    new PasteBot robot, listener
